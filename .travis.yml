@@ -1,0 +1,12 @@
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+env:
+- CI=true
+deploy:
+  provider: heroku
+  app: trailtime
+  api_key:
+    secure: J8eDmMcKplxpFflfuxfPfAGCJGN2BMpW9HPKVJ8vdehZOf+4dx+Qu+lX04Nlx/Qd5q4pMc5PitxbJZJsJMcpk6U4dDgmmU3KFnZ8aJucy3MVrjefLpCMJCeK6vcoYo4hVq0S0zCOwJA0X8defgGMRwLQoHKXC1CIDZCNDNuzidhODlTZ41tGOYH5bWDOkTAho01lPWKQdF4W1sKzc5WnyzkHkg2K/AzN+epGs2SD21nEVYw7qDDQW2qt92ysKu+1G8Y+d/ToRhq42o0InvYyouBrKTpJCarThst1QK+dJ2LiVBKd7g7IDrgR/cKioVLjjN2pmb97MLAGmWFQzg+mb7cJRMW5nbrgDqOMbTGmJqLevpV9V9FP/9AJf5rekNceMI92X0zuVAHEmOEngLXtzNL+C4dUx9sVEt/nYlnJo15XH7+j6KUuaKc/dqI3ImshJGBvzklnpmPzlPslbtPux+nA3tZ/WVPdaO/yTrx+cy0SVVRxbhvwxLwHq+aNtNkQFqhLzdPYMyjvVvN9Epz3PM//Js6qQFYhmGZvXihM3Ir+t8m7TwnL+XdJidTQSg1R8wtY0bOKwSk/PUi4NMHdP2NzGnU7AS9UGnnvOzrhb0lTmzidqjfPX6qIDowW2M6Ki7seyX7K4FoWKZx2eprIYD5BjcxFvkBGz9UeMNMgkjk=
