@@ -1,0 +1,14 @@
+.graybox {
+  background-color: lightgray;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid gray;
+  width: 75%;
+  margin: auto;
+  
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
+}
