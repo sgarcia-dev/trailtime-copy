@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from '../navbar/navbar';
 import Home from '../home/home';
@@ -15,16 +15,25 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Navbar />
-          <div className="main">
+          <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/create" component={TrailCreate} />
-            <Route exact path="/detail" component={TrailDetail} />
-            <Route exact path="/edit" component={TrailEdit} />
-            <Route exact path="/trails" component={TrailList} />
-          </div>
+          </Switch>
+          <Route path="/(.+)" render={() => ( //regular expression so navbar isn't on home page above
+            <div>
+              <Navbar />
+              <div className="main">
+                <Switch>
+                  <Route path="/login" component={Login} />
+                  <Route path="/signup" component={Signup} />
+                  <Route path="/create" component={TrailCreate} />
+                  <Route path="/detail" component={TrailDetail} />
+                  <Route path="/edit" component={TrailEdit} />
+                  <Route path="/trails" component={TrailList} />
+                </Switch>
+              </div>
+            </div>
+          )}
+          />
         </div>
       </Router>
     );
@@ -32,7 +41,8 @@ class App extends Component {
 }
 
 export default App;
-//add basic router, navbar with urls to the components links, views to look like the jquery wireframes, no logic/communication (onclick events) cuz thats what redux is for
+//add basic router, navbar with urls to the components links, views to look like the jquery wireframes, 
+//no logic/communication (onclick events) cuz thats what redux is for
 
 /* 
   render() {

@@ -5,7 +5,7 @@ class TrailCreate extends React.Component {
         return (
             <form>
                 <label for="trailname">Add new trail</label><br />
-                <input id="trailname" name="trailname" type="text" placeholder="name of trail" />
+                <input id="trailname" name="trailname" type="text" placeholder="name of trail" /><br />
                 <label for="traildesc">Trail description</label><br />
                 <input id="traildesc" name="traildesc" type="text" placeholder="description of trail" /><br />
                 <label for="traillocation">location</label><br />
