@@ -1,7 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import TrailCreate from '../trailcreate/trailcreate';
 import './index.css';
+
 class TrailList extends React.Component {
+    testAction() {
+        this.props.dispatch({
+            type: 'TEST_ACTION',
+            newTrail: {
+                trailName: 'trail2',
+                trailRating: 'hard',
+                trailLocation: 'California'
+            }
+        })
+    }
     render() {
         return (
             <main role="main">
@@ -21,5 +33,10 @@ class TrailList extends React.Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        list: state.trail.list
+    }
+}
 
-export default TrailList;
+export default connect(mapStateToProps)(TrailList);
