@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Field, reduxForm } from 'redux-form';
+import TextInput from '../app/common/form/TextInput';
 
 class Login extends React.Component {
     render() {
@@ -8,9 +10,9 @@ class Login extends React.Component {
                 <fieldset>
                     <legend>Log In</legend>
                     <label for="username">User Name</label><br />
-                    <input type="text" name="username" id="username" placeholder="Enter your username" required /><br />
+                    <Field name="username" component={TextInput} placeholder="Enter your username" required /><br />
                     <label for="password">Password</label><br />
-                    <input type="text" name="password" id="password" placeholder="Enter your password" required /><br />
+                    <Field name="password" component={TextInput} placeholder="Enter your password" required /><br />
                     <button type="submit">Log in</button>
                     <Link to="/signup"><button type="button">Or Sign Up Here</button></Link>
                 </fieldset>
@@ -19,4 +21,8 @@ class Login extends React.Component {
     }
 }
 
+Login = reduxForm({
+    // a unique name for the form
+    form: 'loginform'
+})(Login)
 export default Login;
