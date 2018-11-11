@@ -1,15 +1,14 @@
-export const CREATE_TRAIL = "CREATE_TRAIL";
-export const UPDATE_TRAIL = "UPDATE_TRAIL";
-export const DELETE_TRAIL = "DELETE_TRAIL";
+import { CREATE_TRAIL, UPDATE_TRAIL, DELETE_TRAIL } from './trailConstants';
 
-export const createTrail = (trailName, trailRating, trailLocation, trailIndex) => {
+export const createTrail = (trail) => {
     return {
         type: CREATE_TRAIL,
         payload: {
-            trailName,
-            trailRating,
-            trailLocation,
-            trailIndex
+            trail
+            //trailName,
+            //trailRating,
+            //trailLocation,
+            //trailIndex
             //trail//pass payload whatever you want and pass to reducer
         }
     }
@@ -24,11 +23,11 @@ export const updateTrail = (trail) => {
     }
 }
 
-export const deleteTrail = (trail) => {
+export const deleteTrail = (trailId) => {
     return {
         type: DELETE_TRAIL,
         payload: {
-            //trailId
+            trailId
         }
     }
 }

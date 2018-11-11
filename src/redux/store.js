@@ -4,10 +4,10 @@ import logger from 'redux-logger';
 import { reducer as formReducer } from 'redux-form';
 import { composeWithDevTools } from 'redux-devtools-extension';
 //import reducer from './reducer';
-import reducer from '../components/trails/traillist/trailReducer';
+import reducer from './trailReducer';
 
 const rootReducer = combineReducers({
-    reducer,
+    trails: reducer,
     form: formReducer
 })
 

@@ -1,0 +1,3 @@
+export const CREATE_TRAIL = "CREATE_TRAIL";
+export const UPDATE_TRAIL = "UPDATE_TRAIL";
+export const DELETE_TRAIL = "DELETE_TRAIL";

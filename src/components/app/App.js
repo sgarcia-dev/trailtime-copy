@@ -8,7 +8,7 @@ import Login from '../auth/login';
 import TrailCreate from '../trails/trailcreate/trailcreate';
 import TrailDetail from '../trails/traildetail/traildetail';
 import TrailEdit from '../trails/trailedit/trailedit';
-import TrailList from '../trails/traillist/traillist';
+import TrailDashboard from '../trails/trailDashboard/trailDashboard';
 
 class App extends Component {
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
                   <Route path="/create" component={TrailCreate} />
                   <Route path="/detail" component={TrailDetail} />
                   <Route path="/edit" component={TrailEdit} />
-                  <Route path="/trails" component={TrailList} />
+                  <Route path="/trails" component={TrailDashboard} />
                 </Switch>
               </div>
             </div>
