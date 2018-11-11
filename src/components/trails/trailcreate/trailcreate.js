@@ -6,7 +6,18 @@ import TextInput from '../../app/common/form/TextInput';
 class TrailCreate extends React.Component {
     onFormSubmit = values => {
         console.log(values);
-
+        /*if (this.props.initialValues.id) {
+            this.props.updateTrail(values);
+            this.props.history.goBack();
+        } else {
+            const newTrail = {
+                ...values,
+                id: cuid(),
+                creator: ''
+            };
+            this.props.createTrail(newTrail);
+            this.props.history.push('/trails');
+        }*/
     }
 
 
