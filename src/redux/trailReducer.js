@@ -4,17 +4,17 @@ import { createReducer } from '../components/app/common/utils/createReducer';
 const initialState = [
     {
         id: '1',
-        trailName: 'trail1',
+        trailName: 'Last Dollar Road',
         trailRating: 'easy',
         trailLocation: 'Colorado'
     }, {
         id: '2',
-        trailName: 'trail2',
-        trailRating: 'moderate',
+        trailName: 'Schnebly Hill',
+        trailRating: 'easy',
         trailLocation: 'Arizona'
     }, {
         id: '3',
-        trailName: 'trail3',
+        trailName: 'Rubicon',
         trailRating: 'hard',
         trailLocation: 'Nevada'
     }];

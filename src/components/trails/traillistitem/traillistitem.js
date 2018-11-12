@@ -6,7 +6,7 @@ class TrailListItem extends Component {
         const { trail } = this.props;
         return (
             <div>
-                <p>{trail.trailName}</p>
+                <p>{trail.trailName} {trail.trailRating} {trail.trailLocation}</p>
                 <Link to="/detail/${trail.id}">view trail details</Link>
             </div>
         );

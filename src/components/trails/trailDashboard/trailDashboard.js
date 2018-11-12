@@ -4,24 +4,6 @@ import TrailList from '../traillist/traillist';
 import { createTrail } from '../../../redux/actions'
 import cuid from 'cuid';
 
-const trailslist = [
-    {
-        id: '1',
-        trailName: 'Last Dollar Road',
-        trailRating: 'easy',
-        trailLocation: 'Colorado'
-    }, {
-        id: '2',
-        trailName: 'Schnebly Hill',
-        trailRating: 'easy',
-        trailLocation: 'Arizona'
-    }, {
-        id: '3',
-        trailName: 'Rubicon',
-        trailRating: 'hard',
-        trailLocation: 'Nevada'
-    }];
-
 
 const mapStateToProps = (state) => ({
     trails: state.trails
@@ -33,10 +15,10 @@ const actions = {
 
 class TrailDashboard extends Component {
 
-    state = {
-        isOpen: true,
-        selectedTrail: null
-    }
+    //state = {
+    //   isOpen: true,
+    //   selectedTrail: null
+    // }
 
     handleCreateTrail = (newTrail) => {
         newTrail.id = cuid();
@@ -49,7 +31,8 @@ class TrailDashboard extends Component {
 
 
     render() {
-        const { trails } = this.state;
+        const { trails } = this.props;
+        console.log(trails);
         return (
             <div>
                 <p>TRAILS</p>
