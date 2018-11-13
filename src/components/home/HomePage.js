@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = ({ history }) => {
+const HomePage = ({ history }) => {
     return (
         <div>
             <header role="banner">
@@ -21,4 +21,4 @@ const Home = ({ history }) => {
     )
 }
 
-export default Home;
+export default HomePage;

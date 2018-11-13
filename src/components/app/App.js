@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from '../navbar/navbar';
-import Home from '../home/home';
+import HomePage from '../home/HomePage';
 import Signup from '../auth/signup';
 import Login from '../auth/login';
-import TrailCreate from '../trails/trailcreate/trailcreate';
-import TrailDetail from '../trails/traildetail/traildetail';
-import TrailEdit from '../trails/trailedit/trailedit';
-import TrailDashboard from '../trails/trailDashboard/trailDashboard';
+import TrailCreate from '../trails/trailcreate/TrailCreate';
+import TrailDetailPage from '../trails/traildetail/TrailDetailPage';
+import TrailEdit from '../trails/trailedit/TrailEdit';
+import TrailDashboard from '../trails/traildashboard/TrailDashboard';
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={HomePage} />
           </Switch>
           <Route path="/(.+)" render={() => ( //regular expression so navbar isn't on home page above
             <div>
@@ -26,7 +26,7 @@ class App extends Component {
                   <Route path="/login" component={Login} />
                   <Route path="/signup" component={Signup} />
                   <Route path="/create" component={TrailCreate} />
-                  <Route path="/detail" component={TrailDetail} />
+                  <Route path="/detail/:id" component={TrailDetailPage} />
                   <Route path="/edit" component={TrailEdit} />
                   <Route path="/trails" component={TrailDashboard} />
                 </Switch>

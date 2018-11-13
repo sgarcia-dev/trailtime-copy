@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import TrailList from '../traillist/traillist';
+import TrailList from '../traillist/TrailList';
 import { createTrail } from '../../../redux/actions'
 import cuid from 'cuid';
 
