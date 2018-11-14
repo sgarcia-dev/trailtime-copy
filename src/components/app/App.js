@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from '../navbar/navbar';
 import HomePage from '../home/HomePage';
-import Signup from '../auth/signup';
+import SignUpPage from '../auth/SignUpPage';
 import LogInPage from '../auth/LogInPage';
 import TrailCreatePage from '../trails/trailcreate/TrailCreatePage';
 import TrailDetailPage from '../trails/traildetail/TrailDetailPage';
@@ -24,7 +24,7 @@ class App extends Component {
               <div className="main">
                 <Switch>
                   <Route path="/login" component={LogInPage} />
-                  <Route path="/signup" component={Signup} />
+                  <Route path="/signup" component={SignUpPage} />
                   <Route path="/create" component={TrailCreatePage} />
                   <Route path="/detail/:id" component={TrailDetailPage} />
                   <Route path="/edit" component={TrailEditPage} />

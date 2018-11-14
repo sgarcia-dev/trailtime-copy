@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import TextInput from '../app/common/form/TextInput';
 import { Link } from 'react-router-dom';
 
-export const LogInForm = props => (
+const LogInForm = props => (
     <form>
         <fieldset>
             <legend>Log In</legend>
@@ -17,6 +17,6 @@ export const LogInForm = props => (
     </form >
 );
 
-export default LogInForm = reduxForm({
+export default reduxForm({
     form: 'login'
 })(LogInForm)
