@@ -1,0 +1,38 @@
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #641b1b;
+    background-color: black;
+}
+
+.trailtime {
+    float: left;
+}
+.navlink {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color:  rgba(146, 104, 84, 0.637);
+    background-color: gray;
+}
+
+li a:active {
+    background-color: rgba(146, 104, 84, 0.637);
+    background-color: gray;
+}
+
+.trailtime {
+    float: left;
+}

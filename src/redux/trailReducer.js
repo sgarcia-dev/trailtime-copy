@@ -40,8 +40,12 @@ export const deleteTrail = (state, payload) => {
     return [...state.filter(trail => trail.id !== payload.trailId)]
 }
 
-export default createReducer(initialState, {
-    [CREATE_TRAIL]: createTrail,
-    [UPDATE_TRAIL]: updateTrail,
-    [DELETE_TRAIL]: deleteTrail
-})
+//export default createReducer(initialState, {
+//[CREATE_TRAIL]: createTrail,
+//   [UPDATE_TRAIL]: updateTrail,
+//      [DELETE_TRAIL]: deleteTrail
+//})
+
+export default function reducer(state = initialState, action) {
+    return state;
+}

@@ -4,11 +4,20 @@ import { connect } from 'react-redux';
 import LogInForm from './LogInForm';
 
 class LogInPage extends React.Component {
+    login(values) {
+        this.props.dispatch({
+            type: 'LOGIN_SUCCESS',
+            username: values.username,
+            jwt: 'sdfajlialkmsmf'
+        });
+        alert('login success!');
+        this.props.history.push('/trails');
+    }
     render() {
         return (
-            <LogInForm />
+            <LogInForm onSubmit={this.login.bind(this)} />
         )
     }
 }
 
-export default LogInPage;
+export default connect()(LogInPage);

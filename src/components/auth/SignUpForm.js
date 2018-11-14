@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import TextInput from '../app/common/form/TextInput';
 
 const SignUpForm = props => (
-    <form>
+    <form id='signup-form' onSubmit={props.handleSubmit}>
         <fieldset>
             <legend>Sign Up</legend>
             <label for="username">User Name</label><br />

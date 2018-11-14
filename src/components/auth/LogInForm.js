@@ -4,7 +4,7 @@ import TextInput from '../app/common/form/TextInput';
 import { Link } from 'react-router-dom';
 
 const LogInForm = props => (
-    <form>
+    <form id="login-form" onSubmit={props.handleSubmit}>
         <fieldset>
             <legend>Log In</legend>
             <label for="username">User Name</label><br />
