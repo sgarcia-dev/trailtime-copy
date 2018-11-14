@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from '../navbar/NavBar';
 import HomePage from '../home/HomePage';
@@ -27,7 +27,7 @@ class App extends Component {
                   <Route path="/signup" component={SignUpPage} />
                   <Route path="/create" component={TrailCreatePage} />
                   <Route path="/detail/:id" component={TrailDetailPage} />
-                  <Route path="/edit" component={TrailEditPage} />
+                  <Route path="/edit/:id" component={TrailEditPage} />
                   <Route path="/trails" component={TrailDashboard} />
                 </Switch>
               </div>

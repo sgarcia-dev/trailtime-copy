@@ -71,10 +71,10 @@ class NavBar extends React.Component {
         const defaultLinks = !this.props.isLoggedIn ? (
             <React.Fragment>
                 <li>
-                    <NavLink className="navlink" to="/login">Login</NavLink>
+                    <NavLink className="navlink" to="/login">Log In</NavLink>
                 </li>
                 <li>
-                    <NavLink className="navlink" to="/signup">Create an Account</NavLink>
+                    <NavLink className="navlink" to="/signup">Sign Up</NavLink>
                 </li>
             </React.Fragment>
         ) : null;

@@ -1,21 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LogInForm from './LogInForm';
 
 class LogInPage extends React.Component {
-    login(values) {
+    login = (values) => {
         this.props.dispatch({
             type: 'LOGIN_SUCCESS',
             username: values.username,
             jwt: 'sdfajlialkmsmf'
         });
-        alert('login success!');
+        alert(`${values.username} login success!`);
         this.props.history.push('/trails');
     }
     render() {
         return (
-            <LogInForm onSubmit={this.login.bind(this)} />
+            <LogInForm onSubmit={this.login/*bind up top with =()=> instead of this.login.bind(this)*/} />
         )
     }
 }

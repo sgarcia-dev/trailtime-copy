@@ -9,6 +9,7 @@ class TrailListItem extends Component {
             <div>
                 <p>{trail.trailName} {trail.trailRating}{trail.id} {trail.trailLocation}</p>
                 <Link to={`/detail/${trail.id}`}>view trail details</Link>
+                <Link to={`/edit/${trail.id}`}>edit</Link>
             </div>
         );
     }
