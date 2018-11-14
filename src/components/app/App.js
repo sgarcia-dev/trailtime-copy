@@ -4,10 +4,10 @@ import './App.css';
 import Navbar from '../navbar/navbar';
 import HomePage from '../home/HomePage';
 import Signup from '../auth/signup';
-import Login from '../auth/login';
-import TrailCreate from '../trails/trailcreate/TrailCreate';
+import LogInPage from '../auth/LogInPage';
+import TrailCreatePage from '../trails/trailcreate/TrailCreatePage';
 import TrailDetailPage from '../trails/traildetail/TrailDetailPage';
-import TrailEdit from '../trails/trailedit/TrailEdit';
+import TrailEditPage from '../trails/trailedit/TrailEditPage';
 import TrailDashboard from '../trails/traildashboard/TrailDashboard';
 
 class App extends Component {
@@ -23,11 +23,11 @@ class App extends Component {
               <Navbar />
               <div className="main">
                 <Switch>
-                  <Route path="/login" component={Login} />
+                  <Route path="/login" component={LogInPage} />
                   <Route path="/signup" component={Signup} />
-                  <Route path="/create" component={TrailCreate} />
+                  <Route path="/create" component={TrailCreatePage} />
                   <Route path="/detail/:id" component={TrailDetailPage} />
-                  <Route path="/edit" component={TrailEdit} />
+                  <Route path="/edit" component={TrailEditPage} />
                   <Route path="/trails" component={TrailDashboard} />
                 </Switch>
               </div>

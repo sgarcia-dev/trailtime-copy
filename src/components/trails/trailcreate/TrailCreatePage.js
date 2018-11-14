@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import TextInput from '../../app/common/form/TextInput';
 
 
-class TrailCreate extends React.Component {
+class TrailCreatePage extends React.Component {
     onFormSubmit = (event) => {
         //event.preventDefault();
         this.props.createTrail(this.state.trail);
@@ -38,9 +38,9 @@ const mapState = (state, props) => {
     return { trail }
 }
 
-TrailCreate = reduxForm({
+TrailCreatePage = reduxForm({
     // a unique name for the form
     form: 'trailcreateform'
-})(TrailCreate)
-export default TrailCreate;
+})(TrailCreatePage)
+export default TrailCreatePage;
 //export default connect(mapState, actions)(reduxForm({ form: 'trailCreate', enableReinitialize: true })(TrailCreate))
