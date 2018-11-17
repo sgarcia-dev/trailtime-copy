@@ -10,7 +10,6 @@ const actions = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log('MAP STATE TRAIL CREATE');
     const trailId = ownProps.match.params.id;
 
     let trail = {}
@@ -23,11 +22,11 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 
-class TrailCreatePage extends React.Component {
-    onTrailFormSubmit = values => {
+class TrailForm extends React.Component {
+    onFormSubmit = values => {
         if (this.props.initialValues.id) {
             this.props.updateTrail(values);
-            // this.props.history.goBack();
+            this.props.history.goBack();
         } else {
             const newTrail = {
                 ...values,
@@ -50,7 +49,7 @@ class TrailCreatePage extends React.Component {
         //const { handleCancel } = this.props;
         //const { trail } = this.state;onChange={this.onInputChange} value={trail.trailLocation}
         return (
-            <form id='trail-create-form' onSubmit={this.props.handleSubmit(this.onTrailFormSubmit)}>
+            <form id='trail-create-form' onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
                 <label for="trailName">Add new trail</label> <br />
                 <Field name='trailName' type='text' component={TextInput} placeholder="name of trail" /> <br />
                 <label for="trailRating">Trail rating</label> <br />
@@ -66,5 +65,6 @@ class TrailCreatePage extends React.Component {
 
 export default connect(mapStateToProps, actions)(
     reduxForm({ form: 'trailform', enableReinitialize: true })
-        (TrailCreatePage)
+        (TrailForm)
 );
+

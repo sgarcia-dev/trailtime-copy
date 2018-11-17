@@ -24,9 +24,20 @@ const initialState = [
     jwt: null,
     name: null
 }*/
+//////////////////////////
+/*export default function reducer(state = initialState, action) {
+    if (action.type === "CREATE_TRAIL") {
+        return {
+            ...state,
+            trail: action.trailName
+        };
 
+    }
+}*/
+///////////////////////////////
 export const createTrail = (state, payload) => {
-    return [...state, Object.assign({}, payload.trail)]
+    console.log('payload: ', payload);
+    return [...state, Object.assign({}, payload)]
 }
 
 export const updateTrail = (state, payload) => {
@@ -40,12 +51,12 @@ export const deleteTrail = (state, payload) => {
     return [...state.filter(trail => trail.id !== payload.trailId)]
 }
 
-//export default createReducer(initialState, {
-//[CREATE_TRAIL]: createTrail,
-//   [UPDATE_TRAIL]: updateTrail,
-//      [DELETE_TRAIL]: deleteTrail
-//})
+export default createReducer(initialState, {
+    [CREATE_TRAIL]: createTrail,
+    [UPDATE_TRAIL]: updateTrail,
+    [DELETE_TRAIL]: deleteTrail
+})
 
-export default function reducer(state = initialState, action) {
-    return state;
-}
+//export default function reducer(state = initialState, action) {
+//    return state;
+//}

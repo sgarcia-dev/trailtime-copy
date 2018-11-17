@@ -1,4 +1,8 @@
 import { CREATE_TRAIL, UPDATE_TRAIL, DELETE_TRAIL } from './trailConstants';
+////////////////////
+
+////////////////////
+
 
 export const createTrail = (trail) => {
     return {

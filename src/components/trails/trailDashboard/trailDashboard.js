@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TrailList from '../traillist/TrailList';
-import { createTrail } from '../../../redux/actions'
+import { deleteTrail } from '../../../redux/actions'
 import cuid from 'cuid';
+import TrailForm from '../trailcreate/TrailForm';
 
 
 const mapStateToProps = (state) => ({
@@ -10,36 +11,33 @@ const mapStateToProps = (state) => ({
 });
 
 const actions = {
-    createTrail
+    deleteTrail
 }
 
+
 class TrailDashboard extends Component {
+    /*   handleCreateTrail = (newTrail) => {
+           newTrail.id = cuid();
+           this.props.createTrail(newTrail);
+                  this.setState({
+               //trails: updatedTrails,
+               isOpen: false
+           });
+       }*/
 
-    //state = {
-    //   isOpen: true,
-    //   selectedTrail: null
-    // }
-
-    handleCreateTrail = (newTrail) => {
-        newTrail.id = cuid();
-        newTrail.trailName = 'Black Bear';
-        newTrail.trailRating = 'hard';
-        newTrail.trailLocation = 'Colorado';
-        const updatedTrails = [...this.state.trails, newTrail];
-        this.setState({ trails: updatedTrails });
+    handleDeleteTrail = (trailId) => () => {
+        this.props.deleteTrail(trailId);
     }
-
 
     render() {
         const { trails } = this.props;
-        console.log(trails);
         return (
+            //<Trail List {/** onOpenTrail={this.handleOpenTrail}*/}
             <div>
                 <p>TRAILS</p>
-                <TrailList
+                <TrailList deleteTrail={this.handleDeleteTrail}
                     trails={trails/*trails is what you call in TrailList, trailslist comes from above fake data*/}
-                />
-
+                /><br /><br />
 
             </div>
         );
@@ -48,4 +46,4 @@ class TrailDashboard extends Component {
 
 
 
-export default connect(mapStateToProps)(TrailDashboard);
+export default connect(mapStateToProps, actions)(TrailDashboard);

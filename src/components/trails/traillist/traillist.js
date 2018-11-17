@@ -3,24 +3,19 @@ import TrailListItem from './TrailListItem';
 
 class TrailList extends Component {
     render() {
-        const { trails } = this.props;
-        //console.log(this.state);
+        const { trails, deleteTrail } = this.props;
         return (
             <div>
                 {/*double check trails are there with async stuff since sometimes it takes time before rendering otherwise get map error if tries to render before acync is done*/
                     trails && trails.map((trail) =>
-                        <TrailListItem key={trail.id} trail={trail} />)}
+                        <TrailListItem
+                            key={trail.id}
+                            trail={trail}
+                            deleteTrail={deleteTrail}
+                        />)}
             </div>
         );
     }
 }
-
-/*{
-    trails.map(trail => (
-        <TrailListItem key={trail.id} trail={trail} />
-    ))
-}*/
-
-
 
 export default TrailList;

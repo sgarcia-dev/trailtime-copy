@@ -7,8 +7,8 @@ import TextInput from '../../app/common/form/TextInput';
 const TrailEditForm = (props) => {
     return (
         <form id='trail-edit-form' onSubmit={props.handleSubmit}>
-            <label for="trailname">Edit Trail</label> <br />
-            <Field name="trailname" component={TextInput} placeholder="name of trail" /> <br />
+            <label for="trailName">Edit Trail</label> <br />
+            <Field name="trailName" component={TextInput} placeholder="name of trail" /> <br />
             <label for="traildesc">Trail description</label> <br />
             <Field name="traildesc" component={TextInput} placeholder="description of trail" /> <br />
             <label for="traillocation">location</label> <br />

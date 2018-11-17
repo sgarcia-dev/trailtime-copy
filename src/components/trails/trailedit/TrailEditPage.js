@@ -4,10 +4,15 @@ import TrailEditForm from './TrailEditForm';
 
 
 class TrailEditPage extends React.Component {
+    state = {
+        trail: Object.assign({}, this.props.trail)
+    }
+
     onFormSubmit = (values) => {
         //event.preventDefault();
+        //this.props.updateEvent(this.state.event);
         //this.props.createTrail(this.state.trail);
-        alert(`${values.trailname} trail created`);
+        alert(`${values.trailName} trail created`);
         this.props.history.push("/trails");
     }
 
