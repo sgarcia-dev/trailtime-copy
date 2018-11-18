@@ -48,7 +48,7 @@ class TrailDashboard extends Component {
         return (
             //<Trail List {/** onOpenTrail={this.handleOpenTrail}*/}
             <div>
-                <p>TRAILS</p>
+                <h1>TRAILS</h1><hr />
                 <TrailList deleteTrail={this.handleDeleteTrail}
                     trails={trails/*trails is what you call in TrailList, trailslist comes from above fake data*/}
                 /><br /><br />

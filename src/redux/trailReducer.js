@@ -9,7 +9,7 @@ const initialState = {
     trails: [{
         id: '1',
         trailName: 'Last Dollar Road',
-        trailRating: 'easy',
+        trailRating: 'Easy',
         trailLocation: 'Colorado',
         trailDescription: 'Last Dollar Road is a 13.1 mile trail that ascends from Telluride, CO to Ridgeway. The 2-3 hour trail features beautiful wild flowers, jagged mountain peaks, aspens, a grassy field, and blue skies. It is good for all skill levels. The trail is best used from June until November.',
         images: [
@@ -24,7 +24,7 @@ const initialState = {
     }, {
         id: '2',
         trailName: 'Schnebly Hill',
-        trailRating: 'easy',
+        trailRating: 'Easy',
         trailLocation: 'Arizona',
         trailDescription: 'Easy. Signs recommend only trucks or off-highway vehicles, but cars (not low-slung) can make it in good weather. Although the road is wide and well-maintained, expect a bumpy ride. Much of the lower portion is a shelf road. This road is closed during the winter.t',
         images: [
@@ -39,7 +39,7 @@ const initialState = {
     }, {
         id: '3',
         trailName: 'Rubicon',
-        trailRating: 'hard',
+        trailRating: 'Hard',
         trailLocation: 'California',
         trailDescription: 'Rubicon 4x4 Trail is a 18.7 mile heavily trafficked point-to-point trail located near Pollock Pines, California that features a lake. The trail is rated as difficult and primarily used for nature trips, scenic driving, and off road driving.',
         images: [

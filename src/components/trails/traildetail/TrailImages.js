@@ -1,12 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css';
+import ImageGallery from 'react-image-gallery';
 import fourpeaks from '../traildetail/fourpeaks.jpg'
 //{/*src={trail.images[0]}*/}<img src={fourpeaks} />
-const TrailImages = ({ trail }) => {
+
+/*const TrailImages = ({ trail }) => {
   return (
     <React.Fragment>
-      <div class="container">
+    </React.Fragment>
+  );
+}
+
+export default TrailImages;*/
+
+
+export default class TrailImages extends React.Component {
+
+  render() {
+
+    const images = [
+      {
+        original: 'http://lorempixel.com/1000/600/nature/1/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/1/',
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/2/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      }
+    ]
+
+    return (
+      <ImageGallery items={images} />
+    );
+  }
+
+}
+
+
+/* 
+<div class="container">
         <div class="mySlides">1 / 6</div>
         <img src={fourpeaks} className="width100" />
       </div>
@@ -45,38 +82,4 @@ const TrailImages = ({ trail }) => {
           <img class="demo cursor" src={fourpeaks} className="width100" onclick="currentSlide(6)" alt="The Woods" />
         </div>
       </div>
-      <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-
-function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-
-function showSlides(n) {
-  var i;
-                    var slides = document.getElementsByClassName("mySlides");
-                    var dots = document.getElementsByClassName("demo");
-                    var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-  for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        captionText.innerHTML = dots[slideIndex-1].alt;
-      }
-</script>
-    </React.Fragment>
-  );
-}
-
-export default TrailImages;
+*/

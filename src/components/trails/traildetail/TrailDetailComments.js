@@ -15,9 +15,7 @@ const TrailDetailComments = () => {
 }
 
 export default TrailDetailComments;
-
-
-class CommentList extends Component {
+/*class CommentList extends Component {
     renderComments() {
         return this.props.comments.map(comments => {
             return <li key={comment}>{comment}</li>
@@ -27,8 +25,8 @@ class CommentList extends Component {
         return (
             <div>
                 <h2>Comment List</h2>
-                <ul>{thisl.renderComments()}</ul>
+                <ul>{this.renderComments()}</ul>
             </div>
         );
     }
-}
+}*/

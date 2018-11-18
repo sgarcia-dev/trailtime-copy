@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css';
 import fourpeaks from '../traildetail/fourpeaks.jpg'
-import TrailImages from './TrailImages';
+//import TrailImages from './TrailImages';
+import TrailImages from '../traildetail/TrailImages';
 //{/*src={trail.images[0]}*/}<img src={fourpeaks} />
 const TrailDetailInfo = ({ trail }) => {
     return (
