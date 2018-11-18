@@ -3,53 +3,43 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from "react-redux";
 import TextInput from '../../app/common/form/TextInput';
 
+const mapStateToProps = (state, ownProps) => {
+    //console.log('traildetail', state.trails.trails);
+    //console.log('traildetial', ownProps);
+    const trailId = ownProps.match.params.id;
+    let trail = {};
+    if (trailId && state.trails.trails.length > 0) {
+        trail = state.trails.trails.filter(trail => trail.id === trailId)[0]//brings back an array of 1 item
+    }
+    return {
+        trail
+    }
+}
 
-const TrailEditForm = (props) => {
+//const TrailEditForm = ({ trail }) => {
+let TrailEditForm = (props) => {
+    const { handleSubmit, load, pristine, reset, submitting } = props
+
     return (
         <form id='trail-edit-form' onSubmit={props.handleSubmit}>
-            <label for="trailName">Edit Trail</label> <br />
-            <Field name="trailName" component={TextInput} placeholder="name of trail" /> <br />
-            <label for="traildesc">Trail description</label> <br />
-            <Field name="traildesc" component={TextInput} placeholder="description of trail" /> <br />
-            <label for="traillocation">location</label> <br />
-            <Field name="traillocation" component={TextInput} placeholder="location of trail" /> <br />
-            <button type="submit">Submit Trail Changes</button>
+            <label for="trailName">Trail Name</label> <br />
+            <Field name="trailName" component='input' placeholder="name of trail" /> <br />
+            <label for="trailRating">Trail Rating</label> <br />
+            <Field name="trailRating" component='input' placeholder="rating of trail" /> <br />
+            <label for="trailLocation">Trail Location</label> <br />
+            <Field name="trailLocation" component='input' placeholder="description of trail" /> <br />
+            <label for="trailDescription">Trail Description</label> <br />
+            <Field name="trailDescription" component='input' placeholder="description of trail" /> <br />
+            <label for="trailPictures">Trail Pictures</label> <br />
+            <button type="trailPictures">Upload Pictures</button><br />
+            <button type="submit">Submit Trail</button>
         </form>
     )
 }
 
-
-const reduxFormEditTrail = reduxForm({
+//export default connect(mapStateToProps)(reduxForm({
+//    form: 'trailedit'
+//})(TrailEditForm))
+export default reduxForm({
     form: 'trailedit'
 })(TrailEditForm)
-
-
-const mapStateToProps = state => ({
-    initialValues: state.trail
-});
-
-export default connect(mapStateToProps)(reduxFormEditTrail);
-
-
-/*const mapState = (state, props) => {
-    const trailId = props.match.params.id;
-    let trail = {
-        trailName: '',
-        trailRating: '',
-        traillocation: ''
-    }
-
-    if (trailId && state.event.length > 0) {
-        trail = state.trails.filter(trail => trail.id === trailId)[0];
-    }
-    return { trail }
-}
-
-TraiLCreateForm = reduxForm({
-    // a unique name for the form
-    form: 'trailcreateform'
-})(TraiLCreateForm)
-export default TraiLCreateForm;
-//export default connect(mapState, actions)(reduxForm({ form: 'trailCreate', enableReinitialize: true })(TrailCreate))
-
-*/

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import TrailList from '../traillist/TrailList';
 import { createTrail } from '../../../redux/actions'
 import cuid from 'cuid';
-import TrailForm from '../trailcreate/TrailForm';
+import TrailForm from '../trailcreate/zzzTrailForm';
 
 
 const mapStateToProps = (state) => ({

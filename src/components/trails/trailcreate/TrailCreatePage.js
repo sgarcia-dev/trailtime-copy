@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import React from 'react';
 import { connect } from 'react-redux';
-import TextInput from '../../app/common/form/TextInput';
-import { createTrail, updateTrail } from '../../../redux/actions'
+import TrailCreateForm from './TrailCreateForm';
+import { createTrail, updateTrail } from '../../../redux/actions';
+//import store from '../../../redux/store'
+//import cuid = require('cuid');
 import cuid from 'cuid';
 
-const actions = {
-    createTrail, updateTrail
-}
 
-const mapStateToProps = (state, ownProps) => {
+
+
+/*const mapStateToProps = (state, ownProps) => {
     console.log('MAP STATE TRAIL CREATE');
     const trailId = ownProps.match.params.id;
 
@@ -20,14 +20,13 @@ const mapStateToProps = (state, ownProps) => {
     return {
         initialValues: trail
     }
-}
-
-
+}*/
 class TrailCreatePage extends React.Component {
-    onTrailFormSubmit = values => {
+    /*onFormSubmit = values => {
+        console.log(this.props);
         if (this.props.initialValues.id) {
             this.props.updateTrail(values);
-            // this.props.history.goBack();
+            this.props.history.goBack();
         } else {
             const newTrail = {
                 ...values,
@@ -36,35 +35,34 @@ class TrailCreatePage extends React.Component {
             this.props.createTrail(newTrail);
             this.props.history.push('/trails');
         }
-    };
-    //    onInputChange = (event) => {
-    //      const newTrail = this.state.trail;
-    //    newTrail[event.target.name] = event.target.value;
-    //  this.setState({
-    //    trail: newTrail
-    //      })
-    //}
-
+    }*/
+    //////////////////////
+    onFormSubmit = (values) => {
+        console.log('VALUES', values);
+        //if (this.props.trail.id) {
+        // this.props.updateTrail(values);
+        //this.props.history.goBack();
+        //} else {
+        this.props.dispatch({
+            type: 'CREATE_TRAIL',
+            trailName: values.trailName,
+            trailRating: values.trailRating,
+            trailLocation: values.trailLocation,
+            trailId: cuid()
+        });
+        alert(`${values.trailName} ${values.trailRating} ${values.trailLocation} trail created`);
+        //}
+        this.props.history.push('/trails');
+    }
+    /////////////////////////
 
     render() {
-        //const { handleCancel } = this.props;
-        //const { trail } = this.state;onChange={this.onInputChange} value={trail.trailLocation}
         return (
-            <form id='trail-create-form' onSubmit={this.props.handleSubmit(this.onTrailFormSubmit)}>
-                <label for="trailName">Add new trail</label> <br />
-                <Field name='trailName' type='text' component={TextInput} placeholder="name of trail" /> <br />
-                <label for="trailRating">Trail rating</label> <br />
-                <Field name="trailRating" type='text' component={TextInput} placeholder="description of trail" /> <br />
-                <label for="trailLocation">location</label> <br />
-                <Field name="trailLocation" type='text' component={TextInput} placeholder="location of trail" /> <br />
-                <button type="submit">Submit Trail</button>
-                <button onClick={this.props.history.goBack()/*handleCancel*/}>Cancel</button>
-            </form>
-        );
+            <TrailCreateForm onSubmit={this.onFormSubmit} />
+        )
     }
 }
 
-export default connect(mapStateToProps, actions)(
-    reduxForm({ form: 'trailform', enableReinitialize: true })
-        (TrailCreatePage)
-);
+
+//export default connect(mapStateToProps, actions)(TrailCreatePage);
+export default connect()(TrailCreatePage);

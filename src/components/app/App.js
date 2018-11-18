@@ -7,7 +7,7 @@ import SignUpPage from '../auth/SignUpPage';
 import LogInPage from '../auth/LogInPage';
 import TrailCreatePage from '../trails/trailcreate/TrailCreatePage';
 import TrailDetailPage from '../trails/traildetail/TrailDetailPage';
-//import TrailEditPage from '../trails/trailedit/TrailEditPage';
+import TrailEditPage from '../trails/trailedit/TrailEditPage';
 import TrailDashboard from '../trails/traildashboard/TrailDashboard';
 //import TrailForm from '../trails/trailcreate/TrailForm';
 //import TrailCreatePage from '../trails/trailcreate/TrailCreatePage'
@@ -29,7 +29,7 @@ class App extends Component {
                   <Route path="/signup" component={SignUpPage} />
                   <Route path="/create" component={TrailCreatePage} />
                   <Route path="/detail/:id" component={TrailDetailPage} />
-                  <Route path="/edit/:id" component={TrailCreatePage/*TrailEditPage*/} />
+                  <Route path="/edit/:id" component={TrailEditPage/*TrailEditPage*/} />
                   <Route path="/trails" component={TrailDashboard} />
                 </Switch>
               </div>

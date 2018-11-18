@@ -55,7 +55,7 @@ export default connect(mapStateToProps)(Navbar);
 
 
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import './index.css';
 import { connect } from "react-redux";
 
@@ -112,4 +112,5 @@ const mapStateToProps = state => ({
     isLoggedIn: state.auth.isLoggedIn
 });
 
-export default connect(mapStateToProps)(NavBar);
+
+export default withRouter(connect(mapStateToProps)(NavBar));

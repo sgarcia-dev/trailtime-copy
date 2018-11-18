@@ -1,8 +1,12 @@
 import { CREATE_TRAIL, UPDATE_TRAIL, DELETE_TRAIL } from './trailConstants';
-import { createReducer } from '../components/app/common/utils/createReducer';
+//import { createReducer } from '../components/app/common/utils/createReducer';
 
-const initialState = [
-    {
+//const initialState = {
+//    items: []
+//};
+
+const initialState = {
+    trails: [{
         id: '1',
         trailName: 'Last Dollar Road',
         trailRating: 'easy',
@@ -17,7 +21,8 @@ const initialState = [
         trailName: 'Rubicon',
         trailRating: 'hard',
         trailLocation: 'Nevada'
-    }];
+    }]
+};
 /*
     auth: {
     id: null,
@@ -25,38 +30,33 @@ const initialState = [
     name: null
 }*/
 //////////////////////////
-/*export default function reducer(state = initialState, action) {
-    if (action.type === "CREATE_TRAIL") {
-        return {
-            ...state,
-            trail: action.trailName
-        };
-
+export default function reducer(state = initialState, action) {
+    console.log('ACTION', action);
+    if (action.type === CREATE_TRAIL) {
+        return Object.assign({}, state, {
+            trails: [...state.trails, {
+                id: action.trailId,
+                trailName: action.trailName,
+                trailRating: action.trailRating,
+                trailLocation: action.trailLocation
+            }]
+        });
     }
-}*/
-///////////////////////////////
-export const createTrail = (state, payload) => {
-    console.log('payload: ', payload);
-    return [...state, Object.assign({}, payload)]
-}
 
-export const updateTrail = (state, payload) => {
-    return [
-        ...state.filter(trail => trail.id !== payload.trail.id),
-        Object.assign({}, payload.trail)
-    ]
-}
+    else if (action.type === UPDATE_TRAIL) {
+        console.log('UPDATE action', action)
+        return Object.assign({}, state, {
+            trails: [state.trails.map(trail =>
+                trail.id === action.trail.id ? action.trail : trail
+            )]
+        });
+    }
 
-export const deleteTrail = (state, payload) => {
-    return [...state.filter(trail => trail.id !== payload.trailId)]
-}
-
-export default createReducer(initialState, {
-    [CREATE_TRAIL]: createTrail,
-    [UPDATE_TRAIL]: updateTrail,
-    [DELETE_TRAIL]: deleteTrail
-})
-
-//export default function reducer(state = initialState, action) {
-//    return state;
-//}
+    else if (action.type === DELETE_TRAIL) {
+        console.log('delete action', action)
+        return Object.assign({}, state, {
+            trails: [state.trails.filter(trail => trail.id !== action.trail.id)]
+        });
+    }
+    return state;
+};

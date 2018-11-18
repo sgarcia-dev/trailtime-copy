@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class TrailListItem extends Component {
     render() {
         const { trail, deleteTrail } = this.props;
+        //console.log('TrailListItem trial', trail)
         return (
             <div>
                 <p>{trail.trailName} {trail.trailRating} {trail.trailLocation}</p>

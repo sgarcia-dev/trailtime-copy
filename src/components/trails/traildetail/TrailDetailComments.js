@@ -8,6 +8,8 @@ const TrailDetailComments = () => {
             <p>comment 1</p>
             <p>comment 2</p>
             <p>comment 3</p>
+
+
         </React.Fragment>
     );
 }

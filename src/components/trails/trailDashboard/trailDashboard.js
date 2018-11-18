@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TrailList from '../traillist/TrailList';
 import { deleteTrail } from '../../../redux/actions'
-import cuid from 'cuid';
-import TrailForm from '../trailcreate/TrailForm';
+import { DELETE_TRAIL } from '../../../redux/trailConstants';
+//import cuid from 'cuid';
+//import TrailForm from '../trailcreate/TrailForm';
 
 
 const mapStateToProps = (state) => ({
-    trails: state.trails
+    trails: state.trails.trails
 });
 
 const actions = {
@@ -26,11 +27,24 @@ class TrailDashboard extends Component {
        }*/
 
     handleDeleteTrail = (trailId) => () => {
+        console.log('delete id', this.props.dispatch);
         this.props.deleteTrail(trailId);
+        //this.props.dispatch(DELETE_TRAIL(trailId));
+        //this.props.dispatch({
+        //type: 'DELETE_TRAIL',
+        //trailName: trailName,
+        //trailRating: trailRating,
+        //trailLocation: trailLocation,
+        //trailId: trailId
+        //});
     }
+
+
+
 
     render() {
         const { trails } = this.props;
+        console.log('DASHTRAILS', trails)
         return (
             //<Trail List {/** onOpenTrail={this.handleOpenTrail}*/}
             <div>
