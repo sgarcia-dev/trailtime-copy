@@ -48,8 +48,8 @@ class TrailList extends React.Component {
 const mapStateToProps = (state) => {
     return {
         //list: state.trail.list,
-        //trails: state.trails
-        trails: state.trails
+        //trails: state.trail
+        trails: state.trail
     }
 }
 

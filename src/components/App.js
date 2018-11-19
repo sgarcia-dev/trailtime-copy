@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import NavBar from '../navbar/NavBar';
-import HomePage from '../home/HomePage';
-import SignUpPage from '../auth/SignUpPage';
-import LogInPage from '../auth/LogInPage';
-import TrailCreatePage from '../trails/trailcreate/TrailCreatePage';
-import TrailDetailPage from '../trails/traildetail/TrailDetailPage';
-import TrailEditPage from '../trails/trailedit/TrailEditPage';
-import TrailDashboard from '../trails/traildashboard/TrailDashboard';
+import NavBar from './navbar/navbar';
+import HomePage from './home/HomePage';
+import SignUpPage from './auth/SignUpPage';
+import LogInPage from './auth/LogInPage';
+import TrailCreatePage from './trails/trailcreate/TrailCreatePage';
+import TrailDetailPage from './trails/traildetail/TrailDetailPage';
+import TrailEditPage from './trails/trailedit/TrailEditPage';
+import TrailDashboard from './trails/trailDashboard/trailDashboard.js';
 //import TrailForm from '../trails/trailcreate/TrailForm';
 //import TrailCreatePage from '../trails/trailcreate/TrailCreatePage'
 

@@ -8,7 +8,7 @@ const initialState = {
 export const trailReducer = (state = initialState, action) => {
     if (action.type === CREATE_TRAIL) {
         return Object.assign({}, state, {
-            trails: [...state.trails, action.trail]
+            trails: [...state.trail, action.trail]
         });
     }
     else if (action.type === UPDATE_TRAIL) {
@@ -20,7 +20,7 @@ export const trailReducer = (state = initialState, action) => {
     }
     else if (action.type === DELETE_TRAIL) {
         return Object.assign({}, state, {
-            trails: state.trails.filter(trail => trail.id !== action.trail.id)
+            trails: state.trail.filter(trail => trail.id !== action.trail.id)
         });
     }
     return state;

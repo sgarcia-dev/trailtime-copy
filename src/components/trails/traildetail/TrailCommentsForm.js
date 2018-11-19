@@ -23,4 +23,4 @@ class TrailCommentsForm extends Component {
     }
 }
 
-export default reduxForm({ Fields: 'comment' })(TrailCommentsForm);
+export default reduxForm({ form: 'comment' })(TrailCommentsForm);

@@ -8,7 +8,7 @@ import trailReducer from './trailReducer';
 import authReducer from './authReducer';
 
 const rootReducer = combineReducers({
-    trails: trailReducer,
+    trail: trailReducer,
     auth: authReducer,
     form: formReducer
 })

@@ -13,8 +13,8 @@ const mapStateToProps = (state, ownProps) => {
     const trailId = ownProps.match.params.id;
 
     let trail = {}
-    if (trailId && state.trails > 0) {
-        trail = state.trails.filter(trail => trail.id === trailId)[0];
+    if (trailId && state.trail > 0) {
+        trail = state.trail.filter(trail => trail.id === trailId)[0];
     }
     return {
         initialValues: trail

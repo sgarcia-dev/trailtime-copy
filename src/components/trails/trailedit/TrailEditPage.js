@@ -11,18 +11,9 @@ import cuid from 'cuid';
 //const mapStateToProps = state => ({
 //    trail: state.trail
 //});
-const mapStateToProps = (state, ownProps) => {
-    //console.log('traildetail', state.trails.trails);
-    //console.log('traildetial', ownProps);
-    const trailId = ownProps.match.params.id;
-    let trail = {};
-    if (trailId && state.trails.trails.length > 0) {
-        trail = state.trails.trails.filter(trail => trail.id === trailId)[0]//brings back an array of 1 item
-    }
-    return {
-        trail
-    }
-}
+const mapStateToProps = (state, ownProps) => ({
+    trail: state.trail.details
+});
 //const TrailEditPage = ({ trail }) => {
 class TrailEditPage extends React.Component {
     onFormSubmit = (values) => {

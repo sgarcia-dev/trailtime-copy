@@ -7,7 +7,7 @@ import TrailForm from '../trailcreate/zzzTrailForm';
 
 
 const mapStateToProps = (state) => ({
-    trails: state.trails
+    trails: state.trail
 });
 
 const actions = {
@@ -38,7 +38,7 @@ class TrailDashboard extends Component {
         //newTrail.trailName = 'Black Bear';
         //newTrail.trailRating = 'hard';
         //newTrail.trailLocation = 'Colorado';
-        const updatedTrails = [...this.state.trails, newTrail];
+        const updatedTrails = [...this.state.trail, newTrail];
         this.setState({ trails: updatedTrails, isOpen: false });
     }
 
