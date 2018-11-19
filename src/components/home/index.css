@@ -1,0 +1,42 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url('./silverton.jpg');
+
+    /* Full height */
+    height: 100vh; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.circle {
+    min-width: 120px;
+    min-height: 120px;
+    background-color: #D1B44D;
+    border-radius: 50%;
+  display: inline-block;
+  margin-top: 300px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.loginbtn {
+    background-color: #3B2974;
+    color: white;
+    width: 100vw;
+    padding: 20px;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 225%;
+    border: none;
+     position:fixed;
+   bottom:0;
+  left: 0;
+  cursor: pointer;
+}
+
